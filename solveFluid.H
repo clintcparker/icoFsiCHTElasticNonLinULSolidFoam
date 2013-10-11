@@ -15,7 +15,9 @@
         );
 
         solve(UEqn == -fvc::grad(p));
+
 //add enthalpy equation (not sure of exact location)
+#	include "hEqn.H"
         // --- PISO loop
         volScalarField rUA = 1.0/UEqn.A();
 

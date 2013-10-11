@@ -62,5 +62,36 @@
         DV = fvc::ddt(DU);
 
         lduMatrix::debug = 1;
+
+//Code addition which will hopefully add the CHT portion to the solid (following block till end is taken straight from Cht/solid/solvesolid.H
+
+        if (finalIter)
+        {
+            mesh.data::add("finalIteration", true);
+        }
+
+        {
+            for (int nonOrth=0; nonOrth<=nNonOrthCorr; nonOrth++)
+            {
+                tmp<fvScalarMatrix> TEqn
+                (
+                    fvm::ddt(rho*cp, T)
+                  - fvm::laplacian(K, T)
+                );
+                TEqn().relax();
+                TEqn().solve(mesh.solver(T.select(finalIter)));
+            }
+
+            Info<< "Min/max T:" << min(T) << ' ' << max(T) << endl;
+        }
+
+        thermo.correct();
+
+        if (finalIter)
+        {
+            mesh.data::remove("finalIteration");
+        }
+
+
     }
 
