@@ -23,7 +23,7 @@ License
     Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 
 Application
-    icoFsiElastciNonLinSolidFoam
+    icoFsiCHTElastciNonLinSolidFoam
 
 Description
     Transient solver for fluid-solid interaction for an incompressible
