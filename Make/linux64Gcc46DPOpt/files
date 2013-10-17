@@ -4,6 +4,6 @@
 # 1 "files"
 ./transitionalParabolicVelocity/transitionalParabolicVelocityFvPatchVectorField.C
 
-icoFsiElasticNonLinULSolidFoam.C
+icoFsiCHTElasticNonLinULSolidFoam.C
 
-EXE = $(FOAM_USER_APPBIN)/icoFsiElasticNonLinULSolidFoam
+EXE = $(FOAM_USER_APPBIN)/icoFsiCHTElasticNonLinULSolidFoam

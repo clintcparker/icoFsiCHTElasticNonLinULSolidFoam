@@ -1,2 +1,2 @@
 include ./transitionalParabolicVelocity/transitionalParabolicVelocityFvPatchVectorField.dep
-include icoFsiElasticNonLinULSolidFoam.dep
+include icoFsiCHTElasticNonLinULSolidFoam.dep
